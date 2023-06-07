@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TableroComponent } from './component/tablero/tablero.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TableroComponent
   ],
   imports: [
     BrowserModule,
