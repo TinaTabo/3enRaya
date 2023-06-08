@@ -11,3 +11,14 @@ html{
     background-image: url(./assets/img/fondo-mario.jpg);
     background-size: cover;
 }
+
+:root {
+    --color-rojo: #FF0000;
+    --color-azul: #0000FF;
+}
+
+/* Fuente Mario Bross*/
+@font-face {
+    font-family: 'SuperMario256';
+    src: url(assets/font/SuperMario256.ttf);
+}
