@@ -26,6 +26,14 @@ export class TableroComponent {
   mensaje: string = '';
   //-- Tipo Enum Jugador para que lo reconozca el HTML.
   jugadorEnum = Jugador;
+  //-- Elemento de Sonido --> Cada vez que se cambia el estado de una casilla.
+  sonidoMovimiento: HTMLAudioElement = new Audio();
+
+  //-- Constructor
+  constructor(){
+    //-- Añadir audio al HTMLAudioElement -> Ruta al archivo de sonido.
+    this.sonidoMovimiento.src = '../../../assets/sound/mario_coin.wav';
+  }
 
 
   //-- Función que se ejecuta cada vez que un jugador hace click en una casilla.
@@ -46,6 +54,7 @@ export class TableroComponent {
       } else {
         this.cambiarJugador();
       }
+      this.sonidoMovimiento.play(); //-- Reproducir el sonido.
     }
   }
 
