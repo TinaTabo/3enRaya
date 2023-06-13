@@ -1,0 +1,61 @@
+.msg{
+    font-family: 'SuperMario256';
+    color: #ffd300;
+    -webkit-text-stroke: 3px black;
+}
+
+.contenedor-juego{
+    height:100vh;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+
+}
+
+.juego-cuadricula{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:0;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.cuadro{
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 7px solid white;
+    border-radius: 5px;
+    transition: background-color ease-in 0.2s;
+}
+
+.juego-boton{
+    padding: 20px 35px;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px gray, -2px -2px 5px gray;
+    color: white;
+    font-family: 'SuperMario256';
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.juego-boton:active{
+    font-weight: 600;
+    transform: translateY(4px);
+}
+
+.moneda{
+    width: 20px;
+    height: 20px;
+}

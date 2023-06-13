@@ -1,0 +1,15 @@
+<div class="contenedor-juego">
+    <h2 class="msg" id="msg">{{ mensaje }}</h2>
+    <div class="juego-cuadricula">
+        <div class="cuadro" *ngFor="let jugador of cuadricula; let i = index" (click)="hacerMovimiento(i)">
+            <img *ngIf="jugador === jugadorEnum.Jugador1" src="../../../assets/img/ficha_mario.png" alt="Ficha Mario">
+            <img *ngIf="jugador === jugadorEnum.Jugador2" src="../../../assets/img/ficha_luigi.png" alt="Ficha Luigi">
+        </div>
+    </div>
+
+    <button id="juego-boton" class="juego-boton" (click)="reiniciarJuego()">
+        <img src="../../../assets/img/moneda.png" alt="moneda" class="moneda">
+        &nbsp; Volver a jugar &nbsp;
+        <img src="../../../assets/img/moneda.png" alt="moneda" class="moneda">
+    </button>
+</div>
