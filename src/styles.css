@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+/* fuente Mario Bross */
+@font-face {
+    font-family: 'SuperMario256';
+    src: url(assets/fonts/SuperMario256.ttf);
+}
+
+/* variables */
+:root{
+    --colorLuigi: green;
+    --colorMario: red;
+    --colorPeach: rgb(250, 159, 175);
+    --colorBlanco: #ffffff;
+}
+
+/* limpiadores */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    background-image: url(./assets/img/fondo-mario.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
