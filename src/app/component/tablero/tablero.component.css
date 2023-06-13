@@ -1,3 +1,9 @@
+.msg{
+    font-family: 'SuperMario256';
+    color: #ffd300;
+    -webkit-text-stroke: 3px black;
+}
+
 .contenedor-juego{
     height:100vh;
     max-width: 600px;

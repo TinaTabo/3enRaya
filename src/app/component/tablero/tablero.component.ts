@@ -46,6 +46,7 @@ export class TableroComponent {
       this.cuadricula[indice] = this.jugadorActual;
 
       if (this.hayGanador()) {
+        //-- Aqui jugadorActual debe cambiar de x y o al nombre del personaje.
         this.mensaje = `¡Jugador ${this.jugadorActual} ha ganado!`;
         this.juegoTerminado = true;
       } else if (this.tableroLleno()) {
