@@ -1,3 +1,49 @@
 <div class="contenedor_settings">
-    <app-form-settings></app-form-settings>
+    <!-- <app-form-settings></app-form-settings> -->
+    <img src="assets/img/SuperRayaBross.png">
+    <h2>¡ Configura tus jugadores y dale al play... !</h2>
+    <div class="iconos_fichas">
+        <div class="caja_personaje"><img src="assets/img/ficha_mario.png">MARIO</div>
+        <div class="caja_personaje"><img src="assets/img/ficha_luigi.png">LUIGI</div>
+        <div class="caja_personaje"><img src="assets/img/ficha_peach.png">PEACH</div>
+        <div class="caja_personaje"><img src="assets/img/ficha_bowser.png">BOWSER</div>
+        <div class="caja_personaje"><img src="assets/img/ficha_daisy.png">DAISY</div>
+        <div class="caja_personaje"><img src="assets/img/ficha_rosalina.png">ROSALINA</div>
+        <div class="caja_personaje"><img src="assets/img/ficha_toad.png">TOAD</div>
+        <div class="caja_personaje"><img src="assets/img/ficha_waluigi.png">WALUIGI</div>
+        <div class="caja_personaje"><img src="assets/img/ficha_wario.png">WARIO</div>
+        <div class="caja_personaje"><img src="assets/img/ficha_yoshi.png">YOSHI</div>
+    </div>
+
+    <div class="contenedor_formulario">
+        <div class="form_jugadores">
+            <form class="formulario_settings">
+                <h1>JUGADOR 1</h1>
+                <input type="name" class="input_name" id="name" placeholder="Enter your name" #name1>
+                <select name="lenguajes" id="lang" #personaje1>
+                    <option value="assets/img/ficha_mario.png">Mario</option>
+                    <option value="assets/img/ficha_toad.png">Toad</option>
+                    <option value="assets/img/ficha_peach.png">Peach</option>
+                    <option value="assets/img/ficha_wario.png">Wario</option>
+                    <option value="assets/img/ficha_daisy.png">Daisy</option>
+                </select>  
+            </form>
+
+            <div class="formulario_settings">
+                <h1>JUGADOR 2</h1>
+                <input type="name" class="input_name" id="name" placeholder="Enter your name" #name2>
+                <select name="lenguajes" id="lang" #personaje2>
+                    <option value="assets/img/ficha_luigi.png">Luigi</option>
+                    <option value="assets/img/ficha_yoshi.png">Yoshi</option>
+                    <option value="assets/img/ficha_rosalina.png">Rosalina</option>
+                    <option value="assets/img/ficha_waluigi.png">Waluigi</option>
+                    <option value="assets/img/ficha_bowser.png">Bowser</option>                    
+                </select>
+            </div>
+        </div>
+        <div class="botones">
+            <button class=" boton aceptar" (click)="irJuego(name1.value, personaje1.value, name2.value, personaje2.value)">IR AL JUEGO</button>
+            <!-- <input type="reset" class=" boton cancelar"> -->
+        </div>
+    </div>
 </div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Jugador } from 'src/app/models/jugador';
 
 @Component({
   selector: 'app-card-player',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-player.component.css']
 })
 export class CardPlayerComponent {
+  
+  @Input() player!: Jugador;
+  @Input() color!: string;
+
+  constructor() {}
 
 }

@@ -1,20 +1,12 @@
     <div class="card_player">
-        <!-- <img src="assets/img/img_player2.png" class="title"> -->
-        <h1>ESTER</h1>
-        <img src="assets/img/ficha_mario.png" class="personaje">
+        <img src={{player.id_jugador}} class="title">
+        <!-- <h1>{{player.name}}</h1> -->
 
-        <!-- <div class="fichas"> -->
-            <!-- <img class="icono_ficha" src="assets/img/ficha_mario.png" alt="">
-            <img class="icono_ficha" src="assets/img/ficha_mario.png" alt="">
-            <img class="icono_ficha" src="assets/img/ficha_mario.png" alt=""> -->
-            <!-- <img class="icono_ficha" src="assets/img/ficha_peach.png" alt="">
-            <img class="icono_ficha" src="assets/img/ficha_peach.png" alt="">
-            <img class="icono_ficha" src="assets/img/ficha_peach.png" alt=""> -->
-        <!-- </div> -->
+        <img src={{player.personaje}} class="personaje">
         
         <div class="contador_victorias">
             <img class="icono_contador" src="assets/img/victorias.png" alt="">
-            <p>VICTORIAS: 10</p>
+            <p>VICTORIAS: {{player.victorias}}</p>
         </div>
-        <a class="boton_personaje" routerLink='settings'>PERSONAJE</a>
+        <a class="boton_personaje" [ngStyle]="{'background-color': color}">{{player.name | uppercase}}</a>
     </div>

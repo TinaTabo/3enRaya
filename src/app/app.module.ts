@@ -7,6 +7,8 @@ import { CardPlayerComponent } from './component/card-player/card-player.compone
 import { SettingsComponent } from './pages/settings/settings.component';
 import { FormSettingsComponent } from './component/form-settings/form-settings.component';
 import { TableroComponent } from './component/tablero/tablero.component';
+import { GameComponent } from './pages/game/game.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { TableroComponent } from './component/tablero/tablero.component';
     CardPlayerComponent,
     SettingsComponent,
     FormSettingsComponent,
-    TableroComponent
+    TableroComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
