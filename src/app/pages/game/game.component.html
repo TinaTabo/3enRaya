@@ -1,5 +1,9 @@
 <!-- <app-card-player></app-card-player> -->
-<app-tablero></app-tablero>
-<div *ngFor="let jugador of players;">
-    <app-card-player [player] = "jugador" [color] = "jugador.color"></app-card-player>
+<div class="contenedor_game">
+    <app-tablero></app-tablero>
+    <div class="contenedor_cards">
+        <div *ngFor="let jugador of players;">
+            <app-card-player [player] = "jugador" [color] = "jugador.color"></app-card-player>
+        </div>
+    </div>
 </div>
