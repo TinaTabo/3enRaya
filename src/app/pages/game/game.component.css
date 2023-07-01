@@ -1,14 +1,17 @@
 .contenedor{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 100vh;
 }
 
 P{
     font-size: 60px;
-    text-shadow: 4px 4px 4px white;
+    text-shadow: 6px 6px 4px black;
+    color: red;
+    -webkit-text-stroke: 3px black;
+
 }
 
 .contenedor_game{
@@ -17,7 +20,7 @@ P{
     justify-content: space-between;
     align-items: center;
     width: 80vw;
-    height: 75vh;
+    height: 70vh;
 }
 
 .contenedor_cards{

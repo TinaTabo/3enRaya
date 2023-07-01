@@ -50,7 +50,7 @@ export class SettingsComponent {
         color1 = "red";
         break;
       case 'assets/img/ficha_peach.png':
-        color1 = "pink";
+        color1 = "Hotpink";
         break;
       case 'assets/img/ficha_daisy.png':
         color1 = "gold";
@@ -62,7 +62,6 @@ export class SettingsComponent {
         color1 = "black";
     }
     let player1 = new Jugador("assets/img/player1.png",nombre1,avatar1,0, color1);
-    // this.playerService.players.push(player1);
 
     //creacion de perfil de jugador1
     let personaje2 = avatar2;

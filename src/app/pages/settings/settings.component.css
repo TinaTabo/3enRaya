@@ -109,11 +109,6 @@ option{
         cursor: pointer;
     }
 
-    /* .cancelar{
-        background-color: var(--colorMario);
-        cursor: pointer;
-    } */
-
 .botones{
     display: flex;
     justify-content: center;

@@ -5,7 +5,7 @@
 }
 
 .contenedor-juego{
-    height:100vh;
+    height: 80vh;
     max-width: 600px;
     display: flex;
     flex-direction: column;

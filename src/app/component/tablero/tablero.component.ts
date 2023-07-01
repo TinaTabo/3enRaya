@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PlayerService } from 'src/app/shared/player.service';
 
 /* Definir los estados que puede tener una casilla
    utilizando un enumerado */
@@ -30,7 +31,7 @@ export class TableroComponent {
   sonidoMovimiento: HTMLAudioElement = new Audio();
 
   //-- Constructor
-  constructor(){
+  constructor(public playersService: PlayerService){
     //-- Añadir audio al HTMLAudioElement -> Ruta al archivo de sonido.
     this.sonidoMovimiento.src = '../../../assets/sound/mario_coin.wav';
   }
