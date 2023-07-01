@@ -1,9 +1,13 @@
-<!-- <app-card-player></app-card-player> -->
-<div class="contenedor_game">
-    <app-tablero></app-tablero>
-    <div class="contenedor_cards">
-        <div *ngFor="let jugador of players;">
-            <app-card-player [player] = "jugador" [color] = "jugador.color"></app-card-player>
+<div class = "contenedor">
+    <!-- <img src="./assets/img/SuperRayaBross.png" alt=""> -->
+    <p>SUPER RAYA BROSS</p>
+    <div class="contenedor_game">
+        <div><app-tablero></app-tablero></div>
+        <div class="contenedor_cards">
+            <div *ngFor="let jugador of players;">
+                <app-card-player [player] = "jugador" [color] = "jugador.color"></app-card-player>
+            </div>
         </div>
     </div>
 </div>
+

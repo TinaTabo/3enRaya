@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardPlayerComponent } from './component/card-player/card-player.component';
 import { SettingsComponent } from './pages/settings/settings.component';
-import { FormSettingsComponent } from './component/form-settings/form-settings.component';
 import { TableroComponent } from './component/tablero/tablero.component';
 import { GameComponent } from './pages/game/game.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +14,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     CardPlayerComponent,
     SettingsComponent,
-    FormSettingsComponent,
     TableroComponent,
     GameComponent
   ],

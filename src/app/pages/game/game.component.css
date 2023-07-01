@@ -1,9 +1,23 @@
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+P{
+    font-size: 60px;
+    text-shadow: 4px 4px 4px white;
+}
+
 .contenedor_game{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    width: 80vw;
+    height: 75vh;
 }
 
 .contenedor_cards{

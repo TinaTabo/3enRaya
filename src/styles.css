@@ -27,5 +27,7 @@ html{
     scroll-behavior: smooth;
     background-image: url(./assets/img/fondo-mario.png);
     background-size: cover;
-    /* height: 100vh; */
+    height: 100vh;
+    background-repeat: no-repeat;
+    font-family: SuperMario256;
 }

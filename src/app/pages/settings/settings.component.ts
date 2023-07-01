@@ -18,8 +18,9 @@ export class SettingsComponent {
 
     //creacion de perfil de jugador1
     let personaje1 = avatar1;
-    let nombre1;
-    if (name1 == ''){
+    let nombre1 = name1;
+    
+    if (nombre1 == ''){
       switch (personaje1) {
         case 'assets/img/ficha_mario.png':
           nombre1 = "mario";
@@ -39,9 +40,6 @@ export class SettingsComponent {
         default:
           nombre1 = "jugador 1";
       }
-    }
-    else{
-      nombre1 = name1;
     }
     
     let color1 = '';
@@ -64,12 +62,12 @@ export class SettingsComponent {
         color1 = "black";
     }
     let player1 = new Jugador("assets/img/player1.png",nombre1,avatar1,0, color1);
-    this.playerService.players.push(player1);
+    // this.playerService.players.push(player1);
 
     //creacion de perfil de jugador1
     let personaje2 = avatar2;
-    let nombre2;
-    if (name2 == ''){
+    let nombre2 = name2;
+    if (nombre2 == ''){
       switch (personaje2) {
         case 'assets/img/ficha_luigi.png':
           nombre2 = "luigi";
@@ -89,9 +87,6 @@ export class SettingsComponent {
         default:
           nombre2 = "jugador 2";
       }
-    }
-    else{
-      nombre2 = name2;
     }
 
     let color2 = '';
@@ -114,8 +109,7 @@ export class SettingsComponent {
         color2 = "black";
     }
     let player2 = new Jugador("assets/img/player2.png",nombre2,avatar2,0, color2);
-    this.playerService.players.push(player2);
 
-    this.router.navigateByUrl('/game');
+    this.playerService.inicializarJugadores(player1,player2);
   }
 }
