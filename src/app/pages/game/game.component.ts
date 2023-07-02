@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Jugador } from 'src/app/models/jugador';
 import { PlayerService } from 'src/app/shared/player.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -11,8 +12,12 @@ export class GameComponent {
 
   public players: Jugador[];
 
-  constructor(public playerService: PlayerService){
+  constructor(public playerService: PlayerService, public router: Router){
     this.players = this.playerService.players;
   }
 
+  goToHome(){
+    this.playerService.players = [];
+    this.router.navigateByUrl("/");
+  }
 }
