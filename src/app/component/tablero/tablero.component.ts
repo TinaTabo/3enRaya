@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { PlayerService } from 'src/app/shared/player.service';
+import { Jugador } from 'src/app/models/jugador';
 
 /* Definir los estados que puede tener una casilla
    utilizando un enumerado */
-enum Jugador {
+enum Casilla {
   Vacio = '',
   Jugador1 = 'X',
   Jugador2 = 'O',
@@ -15,18 +16,18 @@ enum Jugador {
   styleUrls: ['./tablero.component.css']
 })
 export class TableroComponent {
-  //-- Array que representa el tablero. Es de tipo Jugador(enum que representa los estados
+  //-- Array que representa el tablero. Es de tipo Casilla(enum que representa los estados
   //-- que puede tener una casilla del tablero), inicializado en el estado 'vacío'
-  cuadricula: Jugador[] = new Array(9).fill(Jugador.Vacio);
+  cuadricula: Casilla[] = new Array(9).fill(Casilla.Vacio);
   //-- Variable para indicar el jugador que está jugando actualmente. Se inicializa con el
   //-- jugador 1.
-  jugadorActual: Jugador = Jugador.Jugador1;
+  jugadorActual: Casilla = Casilla.Jugador1;
   //-- Booleano que indica si el juego ha terminado.
   juegoTerminado = false;
   //-- Mensaje que se mostrará en el tablero para indicar que jugador ha ganado la partida.
   mensaje: string = '';
-  //-- Tipo Enum Jugador para que lo reconozca el HTML.
-  jugadorEnum = Jugador;
+  //-- Tipo Enum Casilla para que lo reconozca el HTML.
+  casillaEnum = Casilla;
   //-- Elemento de Sonido --> Cada vez que se cambia el estado de una casilla.
   sonidoMovimiento: HTMLAudioElement = new Audio();
 
@@ -43,12 +44,18 @@ export class TableroComponent {
   //-- o si el tablero está lleno, y dependiendo de la situación actualiza el mensaje que se le muestra
   //-- a los jugadores.
   hacerMovimiento(indice: number): void {
-    if (!this.juegoTerminado && this.cuadricula[indice] === Jugador.Vacio) {
+    if (!this.juegoTerminado && this.cuadricula[indice] === Casilla.Vacio) {
       this.cuadricula[indice] = this.jugadorActual;
 
       if (this.hayGanador()) {
         //-- Aqui jugadorActual debe cambiar de x y o al nombre del personaje.
-        this.mensaje = `¡Jugador ${this.jugadorActual} ha ganado!`;
+        if (this.jugadorActual == Casilla.Jugador1) {
+          this.mensaje = `¡${this.playersService.players[0].name} ha ganado!`;
+          this.playersService.players[0].victorias += 1;
+        }else{
+          this.mensaje = `¡${this.playersService.players[1].name} ha ganado!`;
+          this.playersService.players[1].victorias += 1;
+        }
         this.juegoTerminado = true;
       } else if (this.tableroLleno()) {
         this.mensaje = '¡Empate!';
@@ -63,8 +70,8 @@ export class TableroComponent {
   //-- Funcionalidad del botón 'volver a jugar'
   //-- Resetea el juego al estado inicial (todas las casillas con valor 'vacio')
   reiniciarJuego(): void {
-    this.cuadricula = new Array(9).fill(Jugador.Vacio);
-    this.jugadorActual = Jugador.Jugador1;
+    this.cuadricula = new Array(9).fill(Casilla.Vacio);
+    this.jugadorActual = Casilla.Jugador1;
     this.juegoTerminado = false;
     this.mensaje = '';
   }
@@ -80,7 +87,7 @@ export class TableroComponent {
     for (const combinacion of combinacionesGanadoras) {
       const [a, b, c] = combinacion;
       if (
-        this.cuadricula[a] !== Jugador.Vacio &&
+        this.cuadricula[a] !== Casilla.Vacio &&
         this.cuadricula[a] === this.cuadricula[b] &&
         this.cuadricula[a] === this.cuadricula[c]
       ) {
@@ -93,12 +100,12 @@ export class TableroComponent {
 
   //-- Función para comprobar si todas las casillas tienen un valor distinto de 'vacio'(tablero lleno)
   private tableroLleno(): boolean {
-    return !this.cuadricula.includes(Jugador.Vacio);
+    return !this.cuadricula.includes(Casilla.Vacio);
   }
 
   //-- Función para cambiar el jugador actual por el jugador1 o jugador2 segun corresponda.
   private cambiarJugador(): void {
     this.jugadorActual =
-      this.jugadorActual === Jugador.Jugador1 ? Jugador.Jugador2 : Jugador.Jugador1;
+      this.jugadorActual === Casilla.Jugador1 ? Casilla.Jugador2 : Casilla.Jugador1;
   }
 }

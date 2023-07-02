@@ -7,7 +7,7 @@ import { Jugador } from 'src/app/models/jugador';
   styleUrls: ['./card-player.component.css']
 })
 export class CardPlayerComponent {
-  
+
   @Input() player!: Jugador;
   @Input() color!: string;
 

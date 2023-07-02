@@ -19,7 +19,7 @@ export class SettingsComponent {
     //creacion de perfil de jugador1
     let personaje1 = avatar1;
     let nombre1 = name1;
-    
+
     if (nombre1 == ''){
       switch (personaje1) {
         case 'assets/img/ficha_mario.png':
@@ -41,7 +41,7 @@ export class SettingsComponent {
           nombre1 = "jugador 1";
       }
     }
-    
+
     let color1 = '';
     //segun que personaje elijamos aplicamos el color del nombre
     switch (personaje1) {
