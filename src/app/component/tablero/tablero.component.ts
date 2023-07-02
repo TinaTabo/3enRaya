@@ -30,11 +30,17 @@ export class TableroComponent {
   casillaEnum = Casilla;
   //-- Elemento de Sonido --> Cada vez que se cambia el estado de una casilla.
   sonidoMovimiento: HTMLAudioElement = new Audio();
+  //-- Elemento de Sonido --> Cada vez que gana un jugador.
+  sonidoWin: HTMLAudioElement = new Audio();
+  //-- Elemento de Sonido --> Cada vez que hay un empate.
+  sonidoLost: HTMLAudioElement = new Audio();
 
   //-- Constructor
   constructor(public playersService: PlayerService){
     //-- Añadir audio al HTMLAudioElement -> Ruta al archivo de sonido.
     this.sonidoMovimiento.src = '../../../assets/sound/mario_coin.wav';
+    this.sonidoWin.src = '../../../assets/sound/win.wav';
+    this.sonidoLost.src = '../../../assets/sound/lost.wav';
   }
 
 
@@ -56,9 +62,11 @@ export class TableroComponent {
           this.mensaje = `¡${this.playersService.players[1].name} ha ganado!`;
           this.playersService.players[1].victorias += 1;
         }
+        this.sonidoWin.play(); //-- Reproducir el sonido.
         this.juegoTerminado = true;
       } else if (this.tableroLleno()) {
         this.mensaje = '¡Empate!';
+        this.sonidoLost.play(); //-- Reproducir el sonido.
         this.juegoTerminado = true;
       } else {
         this.cambiarJugador();
