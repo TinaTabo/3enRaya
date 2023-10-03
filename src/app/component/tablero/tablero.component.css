@@ -13,7 +13,6 @@
     align-items: center;
     gap: 20px;
     text-align: center;
-
 }
 
 .juego-cuadricula{
@@ -58,4 +57,11 @@
 .moneda{
     width: 20px;
     height: 20px;
+}
+
+@media (max-width: 768px) {
+    .cuadro{
+        width: 100px;
+        height: 100px;
+    }
 }

@@ -11,7 +11,6 @@ P{
     text-shadow: 6px 6px 4px black;
     color: red;
     -webkit-text-stroke: 3px black;
-
 }
 
 .contenedor_game{
@@ -30,4 +29,72 @@ P{
     align-items: center;
     gap: 20px;
     margin-bottom: 70px;
+}
+
+
+/* Estilo base para pantallas más pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+    .contenedor {
+        height: auto;
+    }
+
+    p {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .contenedor_game {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .contenedor_cards {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Estilo para pantallas medianas (entre 769px y 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contenedor {
+        height: auto;
+    }
+
+    p {
+        font-size: 50px;
+    }
+
+    .contenedor_game {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .contenedor_cards {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 50px;
+    }
+}
+
+/* Estilo para pantallas grandes (más de 1024px) */
+@media (min-width: 1025px) {
+    .contenedor {
+        height: 100vh;
+    }
+
+    p {
+        font-size: 60px;
+    }
+
+    .contenedor_game {
+        flex-direction: row;
+        height: 70vh;
+    }
+
+    .contenedor_cards {
+        flex-direction: row;
+        gap: 20px;
+        margin-bottom: 70px;
+    }
 }

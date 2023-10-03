@@ -7,16 +7,17 @@
     height: 100vh;
 }
 
+.titulo{
+    width: auto;
+    height: auto;
+}
+
 .contenedor_formulario{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: rgba(210,210,210,0.9); */
-    /* border-radius: 8px; */
     padding: 20px;
-    /* box-shadow: 4px 4px 4px black; */
-    /* border: 2px solid black; */
     font-family: SuperMario256;
     gap: 20px;
     width: 90%;
@@ -26,8 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid red; */
-    gap: 20px;
+    gap: 40px;
     width: 95%;
 }
 
@@ -120,6 +120,8 @@ option{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     margin: 20px;
     margin-bottom: 40px;
@@ -143,4 +145,125 @@ option{
 .iconos_fichas img{
     width: 60px;
     height: 60px;
+}
+
+/* Estilo base para pantallas más pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+    .contenedor_settings {
+        height: auto;
+    }
+
+    .titulo{
+        height: 60px;
+        width: 300px;
+    }
+    
+    h2{
+        font-size: 21px;
+        justify-content: center;
+        padding: 3%;
+        text-shadow: 2px 2px 4px white;
+    }
+
+    .contenedor_formulario {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form_jugadores {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .formulario_settings {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .input_name,
+    select {
+        width: 100%;
+    }
+
+    .personaje img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .boton {
+        width: 100%;
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+/* Estilo para pantallas medianas (entre 769px y 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contenedor_settings {
+        height: auto;
+    }
+
+    .contenedor_formulario {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form_jugadores {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .formulario_settings {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .input_name,
+    select {
+        width: 100%;
+    }
+
+    .personaje img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .boton {
+        width: 100%;
+    }
+}
+
+/* Estilo para pantallas grandes (más de 1024px) */
+@media (min-width: 1025px) {
+    .contenedor_settings {
+        height: 100vh;
+    }
+
+    .contenedor_formulario {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .form_jugadores {
+        flex-direction: row;
+    }
+
+    .formulario_settings {
+        width: 25%;
+        padding: 10px;
+    }
+
+    .input_name,
+    select {
+        width: 60%;
+    }
+
+    .personaje img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .boton {
+        width: 230px;
+    }
 }
