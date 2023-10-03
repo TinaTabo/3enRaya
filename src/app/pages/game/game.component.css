@@ -31,6 +31,27 @@ P{
     margin-bottom: 70px;
 }
 
+.home_button{
+    align-self: self-end;
+    margin-right: 30px;
+    padding: 10px 25px;
+    background: var(--colorMario);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black, -2px -2px 5px black;
+    color: white;
+    font-family: 'SuperMario256';
+    -webkit-text-stroke: 1px black;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.home_button:active{
+    font-weight: 600;
+    transform: translateY(3px);
+}
+
 
 /* Estilo base para pantallas más pequeñas (menos de 768px) */
 @media (max-width: 768px) {
@@ -52,6 +73,14 @@ P{
         flex-direction: column;
         gap: 10px;
         margin-bottom: 30px;
+    }
+
+    .home_button{
+        align-self: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-right: 0;
+        margin-left: 0;
     }
 }
 

@@ -1,13 +1,10 @@
 <div class = "contenedor">
-    <!-- <img src="./assets/img/SuperRayaBross.png" alt=""> -->
-    <p>SUPER RAYA BROSS</p>
+    <img src="./assets/img/SuperRayaBross.png" alt="">
     <div class="contenedor_game">
+        <app-card-player [player] = "this.playerService.players[0]" [color] = "this.playerService.players[0].color"></app-card-player>
         <div><app-tablero></app-tablero></div>
-        <div class="contenedor_cards">
-            <div *ngFor="let jugador of players;">
-                <app-card-player [player] = "jugador" [color] = "jugador.color"></app-card-player>
-            </div>
-        </div>
+        <app-card-player [player] = "this.playerService.players[1]" [color] = "this.playerService.players[1].color"></app-card-player>
     </div>
+    <button class="home_button" (click)="goToHome()">Home</button>
 </div>
 
